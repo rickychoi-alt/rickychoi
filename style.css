@@ -1,0 +1,364 @@
+/* 
+ * 麻雀風雲錄 - 開發者網站樣式
+ * 設計風格：簡約、中式風格、響應式
+ */
+
+/* ===== 基礎設定 ===== */
+:root {
+    --color-primary: #2D5A3D;       /* 墨綠色 */
+    --color-primary-light: #3D7A4D; /* 淺墨綠 */
+    --color-background: #FAF8F5;    /* 米白色 */
+    --color-paper: #FFFFFF;         /* 紙白色 */
+    --color-text: #1A1A1A;          /* 墨黑色 */
+    --color-text-secondary: #666666;/* 次要文字 */
+    --color-accent-blue: #4A90A4;   /* 淡藍色 */
+    --color-accent-gold: #B8860B;   /* 淡金色 */
+    --color-border: #E5E5E5;        /* 邊框色 */
+    
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    --max-width: 1000px;
+    --border-radius: 12px;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* ===== 導航列 ===== */
+.navbar {
+    background-color: var(--color-paper);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+/* ===== Hero 區域 ===== */
+.hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.hero .tagline {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+}
+
+.app-store-btn {
+    display: inline-block;
+    background-color: white;
+    color: var(--color-primary);
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.app-store-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== 功能區域 ===== */
+.features {
+    padding: 80px 24px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 32px;
+    color: var(--color-primary);
+    margin-bottom: 48px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.feature-card {
+    background-color: var(--color-paper);
+    padding: 32px 24px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+/* ===== 內容區域（隱私政策、支援頁面）===== */
+.content-page {
+    padding: 48px 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-page h1 {
+    font-size: 32px;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.content-page .last-updated {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+.content-page h2 {
+    font-size: 22px;
+    color: var(--color-primary);
+    margin-top: 32px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.content-page h3 {
+    font-size: 18px;
+    color: var(--color-text);
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.content-page p {
+    margin-bottom: 16px;
+    color: var(--color-text-secondary);
+}
+
+.content-page ul, .content-page ol {
+    margin-bottom: 16px;
+    padding-left: 24px;
+}
+
+.content-page li {
+    margin-bottom: 8px;
+    color: var(--color-text-secondary);
+}
+
+.content-page a {
+    color: var(--color-accent-blue);
+    text-decoration: none;
+}
+
+.content-page a:hover {
+    text-decoration: underline;
+}
+
+/* FAQ 樣式 */
+.faq-item {
+    background-color: var(--color-paper);
+    border-radius: var(--border-radius);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+}
+
+.faq-item strong {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* 聯絡資訊卡片 */
+.contact-card {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+    padding: 32px;
+    border-radius: var(--border-radius);
+    margin: 32px 0;
+    text-align: center;
+}
+
+.contact-card h3 {
+    margin-bottom: 16px;
+    color: white;
+}
+
+.contact-card a {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ===== 頁腳 ===== */
+.footer {
+    background-color: var(--color-paper);
+    border-top: 1px solid var(--color-border);
+    padding: 40px 24px;
+    margin-top: 48px;
+}
+
+.footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+}
+
+.footer-copyright {
+    color: var(--color-text-secondary);
+    font-size: 13px;
+}
+
+/* ===== 響應式設計 ===== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .hero .tagline {
+        font-size: 16px;
+    }
+    
+    .navbar-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .nav-links {
+        gap: 16px;
+    }
+    
+    .features h2 {
+        font-size: 24px;
+    }
+    
+    .content-page h1 {
+        font-size: 26px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+/* ===== 返回頂部按鈕 ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: var(--color-primary);
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
